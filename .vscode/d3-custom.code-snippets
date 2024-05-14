@@ -513,6 +513,22 @@
 		],
 		"description": "Hexbin chart"
 	},
+	"Group data by many keys": {
+		"scope": "javascript",
+		"prefix": "datagrp",
+		"body": [
+			"const dataGrouped = d3",
+			"    .flatGroup(data, d => d.KEY)",
+			"    .map(d => {",
+			"        return {",
+			"            VALUE_KEY_1: d[1][0].VALUE_KEY_1,",
+			"            VALUE_KEY_N: d[1][0].VALUE_KEY_N,",
+			"            VALUE_TOTAL: d[1].reduce((total, d) => total + d.VALUE, 0)",
+			"        }",
+			"    })"
+		],
+		"description": "Group data by many keys"
+	},
 	"Get file complete path": {
 		"scope": "python",
 		"prefix": "filefulllpath",
