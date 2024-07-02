@@ -141,6 +141,34 @@
 		],
 		"description": "Horizontal bars"
 	},
+	"Vertical bars": {
+		"scope": "javascript",
+		"prefix": "barv",
+		"body": [
+			"const x = d3",
+			"    .scaleBand()",
+			"    .domain(data.map(d => d.GROUP_FIELD))",
+			"    .range([0, width])",
+			"    .padding(.1)",
+			"",
+			"const y = d3",
+			"    .scaleLinear()",
+			"    .domain([0, MAX_VALUE])",
+			"    .range([height, 0])",
+			"",
+			"chart",
+			"    .selectAll('.data-point')",
+			"    .data(data)",
+			"    .join('rect')",
+			"    .attr('class', 'data-point')",
+			"    .attr('x', d => x(d.GROUP_FIELD))",
+			"    .attr('y', d => y(d.VALUE))",
+			"    .attr('width', d => x.bandwidth())",
+			"    .attr('height', height - y(d.VALUE))",
+			"    .attr('fill', '#69b3a2')"
+		],
+		"description": "Vertical bars"
+	},
 	"Horizontal bars grouped": {
 		"scope": "javascript",
 		"prefix": "barhgrp",
