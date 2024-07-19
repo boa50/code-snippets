@@ -163,8 +163,8 @@
 			"    .attr('class', 'data-point')",
 			"    .attr('x', d => x(d.GROUP_FIELD))",
 			"    .attr('y', d => y(d.VALUE))",
-			"    .attr('width', d => x.bandwidth())",
-			"    .attr('height', height - y(d.VALUE))",
+			"    .attr('width', x.bandwidth())",
+			"    .attr('height', d => height - y(d.VALUE))",
 			"    .attr('fill', '#69b3a2')"
 		],
 		"description": "Vertical bars"
